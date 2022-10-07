@@ -2,29 +2,31 @@ package com.davioooh.datatablespagination.model;
 
 public interface Column {
 
-    /**
-     * Column's data source.
-     */
-    String getData();
+	/**
+	 * Column's data source, as defined by columns.data.
+	 */
+	String getData();
 
-    /**
-     * Column's name.
-     */
-    String getName();
+	/**
+	 * Column's name, as defined by columns.name.
+	 */
+	String getName();
 
-    /**
-     * Flag to indicate if this column is searchable (true) or not (false).
-     */
-    boolean isSearchable();
+	/**
+	 * Flag to indicate if this column is searchable (true) or not (false). This is
+	 * controlled by columns.searchable.
+	 */
+	boolean isSearchable();
 
-    /**
-     * Flag to indicate if this column is orderable (true) or not (false).
-     */
-    boolean isOrderable();
+	/**
+	 * Flag to indicate if this column is orderable (true) or not (false). This is
+	 * controlled by columns.orderable.
+	 */
+	boolean isOrderable();
 
-    /**
-     * Search criteria to apply to this specific column.
-     */
-    SearchCriteria getSearch();
+	/**
+	 * Search criteria to apply to this specific column.
+	 */
+	SearchCriteria getSearch();
 
 }
