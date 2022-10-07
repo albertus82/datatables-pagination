@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
 public abstract class DataServiceBase<T> implements TableDataService<Map<String, String>> {
@@ -26,12 +27,11 @@ public abstract class DataServiceBase<T> implements TableDataService<Map<String,
             data.forEach(i -> {
                 Map<String, Object> m = objectMapper.convertValue(i, Map.class);
                 records.add(m.entrySet().stream()
-                        .collect(Collectors.toMap(k -> k.getKey(), v -> v.getValue().toString())));
+                        .collect(Collectors.toMap(Entry::getKey, v -> v.getValue().toString())));
             });
             log.debug("Data map generated...");
         } catch (Exception e) {
-            log.error("Error fetching page entries.", e);
-            throw new TableDataException("", e);
+            throw new TableDataException("Error fetching page entries", e);
         }
         return records;
     }
