@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class SearchCriteria {
+public class SearchCriteria implements ISearchCriteria {
 
     /**
      * Search value. To be applied to all columns which have searchable as
