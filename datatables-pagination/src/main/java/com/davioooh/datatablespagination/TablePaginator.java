@@ -10,6 +10,7 @@ import com.davioooh.datatablespagination.model.TablePage;
  * @author David Castelletti
  */
 public interface TablePaginator<T> {
-    TablePage<T> getPage(PaginationCriteria<?, ?> paginationCriteria);
+
+	TablePage<T> getPage(PaginationCriteria<?, ?> paginationCriteria);
 
 }

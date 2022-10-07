@@ -1,8 +1,8 @@
 package com.davioooh.datatablespagination.data;
 
-import com.davioooh.datatablespagination.model.PaginationCriteria;
-
 import java.util.List;
+
+import com.davioooh.datatablespagination.model.PaginationCriteria;
 
 /**
  * This interface defines API to fetch data to be paginated. Classes
@@ -29,7 +29,7 @@ public interface TableDataService<T> {
 	 * @return the count of filter entries.
 	 * @throws TableDataException
 	 */
-    long countFilteredEntries(PaginationCriteria<?, ?> paginationCriteria) throws TableDataException;
+	long countFilteredEntries(PaginationCriteria<?, ?> paginationCriteria) throws TableDataException;
 
 	/**
 	 * Returns entries for a table page. It should filter entries by search keys and
@@ -39,6 +39,6 @@ public interface TableDataService<T> {
 	 * @return filter and ordered entities.
 	 * @throws TableDataException
 	 */
-    List<T> getPageEntries(PaginationCriteria<?, ?> paginationCriteria) throws TableDataException;
+	List<T> getPageEntries(PaginationCriteria<?, ?> paginationCriteria) throws TableDataException;
 
 }
