@@ -7,10 +7,12 @@ import com.davioooh.datatablespagination.data.TableDataService;
 import com.davioooh.datatablespagination.model.PaginationCriteria;
 import com.davioooh.datatablespagination.model.TablePage;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@Slf4j
 public class SimplePaginator implements TablePaginator<Map<String, String>> {
+
+	private static final Logger log = LoggerFactory.getLogger(SimplePaginator.class);
 
     private TableDataService dataService;
 

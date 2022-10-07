@@ -2,15 +2,17 @@ package com.davioooh.datatablespagination.data;
 
 import com.davioooh.datatablespagination.model.PaginationCriteria;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-@Slf4j
 public abstract class DataServiceBase<T> implements TableDataService {
+
+	private static final Logger log = LoggerFactory.getLogger(DataServiceBase.class);
 
     private ObjectMapper objectMapper = new ObjectMapper();
 

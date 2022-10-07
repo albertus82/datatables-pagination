@@ -4,9 +4,7 @@ import java.util.List;
 
 /**
  * The pagination criteria provided by the client to process and generate a
- * table page. It includes, pagination, ordering and search criteria. An
- * instance of this class can be created directly deserializing the JSON request
- * payload from the client.
+ * table page. It includes, pagination, ordering and search criteria.
  *
  * @author David Castelletti
  */
