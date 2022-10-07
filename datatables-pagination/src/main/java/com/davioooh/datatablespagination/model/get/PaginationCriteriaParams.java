@@ -9,7 +9,7 @@ import com.davioooh.datatablespagination.model.PaginationCriteria;
  * will send the following data in order to let the server know what data is
  * required:
  */
-public class PaginationCriteriaParams implements PaginationCriteria {
+public class PaginationCriteriaParams implements PaginationCriteria<OrderingCriteriaParams, ColumnParams> {
 
 	private long draw;
 
@@ -59,6 +59,7 @@ public class PaginationCriteriaParams implements PaginationCriteria {
 		this.search = search;
 	}
 
+	@Override
 	public List<OrderingCriteriaParams> getOrder() {
 		return order;
 	}
@@ -67,6 +68,7 @@ public class PaginationCriteriaParams implements PaginationCriteria {
 		this.order = order;
 	}
 
+	@Override
 	public List<ColumnParams> getColumns() {
 		return columns;
 	}

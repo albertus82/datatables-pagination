@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * Class representing the result of the server-side pagination. Its JSON
@@ -16,7 +15,7 @@ import java.util.Map;
  */
 @Getter
 @Setter
-public class TablePage {
+public class TablePage<T> {
 
     /**
      * The draw counter that this object is a response to - from the draw parameter
@@ -40,7 +39,7 @@ public class TablePage {
      * The data to be displayed in the table. This is an array of data source
      * objects, one for each row, which will be used by DataTables.
      */
-    private List<Map<String, String>> data;
+    private List<T> data;
 
     /**
      * If an error occurs during the running of the server-side processing script,

@@ -15,7 +15,7 @@ public abstract class DataServiceBase<T> implements TableDataService {
     private ObjectMapper objectMapper = new ObjectMapper();
 
     @Override
-    public List<Map<String, String>> getPageEntries(PaginationCriteria paginationCriteria) throws TableDataException {
+    public List<Map<String, String>> getPageEntries(PaginationCriteria<?, ?> paginationCriteria) throws TableDataException {
         List<T> data = getData(paginationCriteria);
         log.debug("Table data retrieved...");
 
@@ -34,6 +34,6 @@ public abstract class DataServiceBase<T> implements TableDataService {
         return records;
     }
 
-    protected abstract List<T> getData(PaginationCriteria paginationCriteria) throws TableDataException;
+    protected abstract List<T> getData(PaginationCriteria<?, ?> paginationCriteria) throws TableDataException;
 
 }

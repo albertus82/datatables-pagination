@@ -1,13 +1,16 @@
 package com.davioooh.datatablespagination;
 
+import java.util.Map;
+
 import com.davioooh.datatablespagination.data.TableDataException;
 import com.davioooh.datatablespagination.data.TableDataService;
 import com.davioooh.datatablespagination.model.PaginationCriteria;
 import com.davioooh.datatablespagination.model.TablePage;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class SimplePaginator implements TablePaginator {
+public class SimplePaginator implements TablePaginator<Map<String, String>> {
 
     private TableDataService dataService;
 
@@ -16,8 +19,8 @@ public class SimplePaginator implements TablePaginator {
     }
 
     @Override
-    public TablePage getPage(PaginationCriteria paginationCriteria) {
-        TablePage page = new TablePage();
+	public TablePage<Map<String, String>> getPage(PaginationCriteria<?, ?> paginationCriteria) {
+        TablePage<Map<String, String>> page = new TablePage<>();
         try {
             page = generatePage(paginationCriteria);
         } catch (TableDataException tde) {
@@ -27,8 +30,8 @@ public class SimplePaginator implements TablePaginator {
         return page;
     }
 
-    protected TablePage generatePage(PaginationCriteria paginationCriteria) throws TableDataException {
-        TablePage page = new TablePage();
+	protected TablePage<Map<String, String>> generatePage(PaginationCriteria<?, ?> paginationCriteria) throws TableDataException {
+        TablePage<Map<String, String>> page = new TablePage<>();
 
         page.setDraw(paginationCriteria.getDraw());
         log.debug("Draw set...");

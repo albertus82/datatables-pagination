@@ -1,5 +1,7 @@
 package com.davioooh.paginationdemo;
 
+import java.util.Map;
+
 import com.davioooh.datatablespagination.SimplePaginator;
 import com.davioooh.datatablespagination.TablePaginator;
 import com.davioooh.datatablespagination.model.TablePage;
@@ -12,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping
 public class UserController {
 
-    private TablePaginator paginator = new SimplePaginator(
+    private TablePaginator<Map<String, String>> paginator = new SimplePaginator(
             new UserTableRepository());
 
     @GetMapping("/users/get")
@@ -27,13 +29,13 @@ public class UserController {
 
     @GetMapping("/users/data")
     public @ResponseBody
-    TablePage getUsersData(PaginationCriteriaParams treq) {
+    TablePage<Map<String, String>> getUsersData(PaginationCriteriaParams treq) {
         return paginator.getPage(treq);
     }
 
     @PostMapping("/users/data")
     public @ResponseBody
-    TablePage postUsersData(@RequestBody PaginationCriteriaBody treq) {
+    TablePage<Map<String, String>> postUsersData(@RequestBody PaginationCriteriaBody treq) {
         return paginator.getPage(treq);
     }
 }

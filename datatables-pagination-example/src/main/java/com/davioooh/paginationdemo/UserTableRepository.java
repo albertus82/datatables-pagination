@@ -19,12 +19,12 @@ public class UserTableRepository extends DataServiceBase<User> {
 	}
 
 	@Override
-	public long countFilteredEntries(PaginationCriteria paginationCriteria) throws TableDataException {
+	public long countFilteredEntries(PaginationCriteria<?, ?> paginationCriteria) throws TableDataException {
 		return 0;
 	}
 
 	@Override
-	protected List<User> getData(PaginationCriteria paginationCriteria) throws TableDataException {
+	protected List<User> getData(PaginationCriteria<?, ?> paginationCriteria) throws TableDataException {
 		return TEST_DATA.stream().filter(u->u.getName().contains(paginationCriteria.getSearch().getValue())).collect(Collectors.toList());
 	}
 
