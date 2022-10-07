@@ -22,13 +22,13 @@ public class PaginationCriteria {
      * requests are asynchronous and thus can return out of sequence). This is used
      * as part of the draw return parameter.
      */
-    private int draw;
+    private long draw;
 
     /**
      * Paging first record indicator. This is the start point in the current data
      * set (0 index based - i.e. 0 is the first record).
      */
-    private int start;
+    private long start;
 
     /**
      * Number of records that the table can display in the current draw. It is
@@ -37,7 +37,7 @@ public class PaginationCriteria {
      * indicate that all records should be returned (although that negates any
      * benefits of server-side processing!)
      */
-    private int length;
+    private long length;
 
     /**
      * Global search criteria.

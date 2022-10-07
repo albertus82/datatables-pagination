@@ -22,7 +22,7 @@ public class TablePage {
      * The draw counter that this object is a response to - from the draw parameter
      * sent as part of the data request.
      */
-    private int draw;
+    private long draw;
 
     /**
      * Total records, before filtering.
