@@ -12,7 +12,7 @@ import com.davioooh.datatablespagination.model.PaginationCriteria;
  *
  * @author David Castelletti
  */
-public class PaginationCriteriaBody implements PaginationCriteria<OrderingCriteriaBody, ColumnBody> {
+public class PaginationCriteriaBody implements PaginationCriteria {
 
 	private long draw;
 

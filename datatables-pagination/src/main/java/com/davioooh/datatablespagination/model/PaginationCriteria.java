@@ -8,7 +8,7 @@ import java.util.List;
  *
  * @author David Castelletti
  */
-public interface PaginationCriteria<O extends OrderingCriteria, C extends Column> {
+public interface PaginationCriteria {
 
 	/**
 	 * Draw counter. This is used by DataTables to ensure that the Ajax returns from
@@ -41,11 +41,11 @@ public interface PaginationCriteria<O extends OrderingCriteria, C extends Column
 	/**
 	 * Column's ordering criteria.
 	 */
-	List<O> getOrder();
+	List<? extends OrderingCriteria> getOrder();
 
 	/**
 	 * Table column's list.
 	 */
-	List<C> getColumns();
+	List<? extends Column> getColumns();
 
 }

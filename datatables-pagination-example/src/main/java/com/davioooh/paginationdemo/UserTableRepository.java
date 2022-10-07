@@ -7,6 +7,7 @@ import java.util.stream.Stream;
 
 import com.davioooh.datatablespagination.data.DataServiceBase;
 import com.davioooh.datatablespagination.data.TableDataException;
+import com.davioooh.datatablespagination.model.OrderingCriteria;
 import com.davioooh.datatablespagination.model.PaginationCriteria;
 
 public class UserTableRepository extends DataServiceBase<User> {
@@ -19,17 +20,40 @@ public class UserTableRepository extends DataServiceBase<User> {
 	}
 
 	@Override
-	public long countFilteredEntries(PaginationCriteria<?, ?> paginationCriteria) throws TableDataException {
+	public long countFilteredEntries(PaginationCriteria paginationCriteria) throws TableDataException {
 		return filter(paginationCriteria).count();
 	}
 
 	@Override
-	protected List<User> getData(PaginationCriteria<?, ?> paginationCriteria) throws TableDataException {
+	protected List<User> getData(PaginationCriteria paginationCriteria) throws TableDataException {
 		return filter(paginationCriteria).collect(Collectors.toList());
 	}
 
-	private static Stream<User> filter(PaginationCriteria<?, ?> paginationCriteria) {
-		return TEST_DATA.stream().filter(u -> u.getName().contains(paginationCriteria.getSearch().getValue()));
+	private static Stream<User> filter(PaginationCriteria paginationCriteria) {
+		Stream<User> filter = TEST_DATA.stream().filter(u -> u.getName() == null || u.getName().contains(paginationCriteria.getSearch().getValue()));
+		if (!paginationCriteria.getOrder().isEmpty()) {
+			filter = filter.sorted((a, b) -> {
+				OrderingCriteria order = paginationCriteria.getOrder().get(0);
+				int dir = order.getDir().equalsIgnoreCase(OrderingCriteria.DESC) ? -1 : 1;
+				switch (paginationCriteria.getColumns().get(order.getColumn()).getData()) {
+				case "id":
+					return dir * Integer.compare(a.getId(), b.getId());
+				case "name":
+					if (a.getName() == null) {
+						return dir * 1;
+					}
+					if (b.getName() == null) {
+						return dir * -1;
+					}
+					return dir * a.getName().compareTo(b.getName());
+				case "age":
+					return dir * Integer.compare(a.getAge(), b.getAge());
+				default:
+					return 0;
+				}
+			});
+		}
+		return filter;
 	}
 
 }

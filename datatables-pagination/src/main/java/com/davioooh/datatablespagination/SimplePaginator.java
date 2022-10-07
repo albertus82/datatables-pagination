@@ -21,7 +21,7 @@ public class SimplePaginator implements TablePaginator<Map<String, String>> {
 	}
 
 	@Override
-	public TablePage<Map<String, String>> getPage(PaginationCriteria<?, ?> paginationCriteria) {
+	public TablePage<Map<String, String>> getPage(PaginationCriteria paginationCriteria) {
 		TablePage<Map<String, String>> page = new TablePage<>();
 		try {
 			page = generatePage(paginationCriteria);
@@ -33,7 +33,7 @@ public class SimplePaginator implements TablePaginator<Map<String, String>> {
 		return page;
 	}
 
-	protected TablePage<Map<String, String>> generatePage(PaginationCriteria<?, ?> paginationCriteria) throws TableDataException {
+	protected TablePage<Map<String, String>> generatePage(PaginationCriteria paginationCriteria) throws TableDataException {
 		TablePage<Map<String, String>> page = new TablePage<>();
 
 		page.setDraw(paginationCriteria.getDraw());

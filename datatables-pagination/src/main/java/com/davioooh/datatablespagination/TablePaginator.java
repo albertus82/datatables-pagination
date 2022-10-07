@@ -11,6 +11,6 @@ import com.davioooh.datatablespagination.model.TablePage;
  */
 public interface TablePaginator<T> {
 
-	TablePage<T> getPage(PaginationCriteria<?, ?> paginationCriteria);
+	TablePage<T> getPage(PaginationCriteria paginationCriteria);
 
 }
