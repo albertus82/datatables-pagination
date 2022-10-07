@@ -3,6 +3,7 @@ package com.davioooh.paginationdemo;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import com.davioooh.datatablespagination.data.DataServiceBase;
 import com.davioooh.datatablespagination.data.TableDataException;
@@ -19,12 +20,16 @@ public class UserTableRepository extends DataServiceBase<User> {
 
 	@Override
 	public long countFilteredEntries(PaginationCriteria<?, ?> paginationCriteria) throws TableDataException {
-		return 0;
+		return filter(paginationCriteria).count();
 	}
 
 	@Override
 	protected List<User> getData(PaginationCriteria<?, ?> paginationCriteria) throws TableDataException {
-		return TEST_DATA.stream().filter(u -> u.getName().contains(paginationCriteria.getSearch().getValue())).collect(Collectors.toList());
+		return filter(paginationCriteria).collect(Collectors.toList());
+	}
+
+	private static Stream<User> filter(PaginationCriteria<?, ?> paginationCriteria) {
+		return TEST_DATA.stream().filter(u -> u.getName().contains(paginationCriteria.getSearch().getValue()));
 	}
 
 }
