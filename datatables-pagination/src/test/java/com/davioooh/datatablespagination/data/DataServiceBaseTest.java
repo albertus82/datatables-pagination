@@ -20,19 +20,19 @@ class DataServiceBaseTest {
                     new User(4, "Marco", 23),
                     new User(5, "Jenny", 15));
 
-    private DataServiceBase dataService = new DataServiceBase<User>() {
+    private DataServiceBase<User> dataService = new DataServiceBase<User>() {
         @Override
         public long countTotalEntries() throws TableDataException {
             return 0;
         }
 
         @Override
-        public long countFilteredEntries(PaginationCriteria paginationCriteria) throws TableDataException {
+        public long countFilteredEntries(PaginationCriteria<?, ?> paginationCriteria) throws TableDataException {
             return 0;
         }
 
         @Override
-        protected List<User> getData(PaginationCriteria paginationCriteria) throws TableDataException {
+        protected List<User> getData(PaginationCriteria<?, ?> paginationCriteria) throws TableDataException {
             return TEST_DATA;
         }
     };

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public abstract class DataServiceBase<T> implements TableDataService {
+public abstract class DataServiceBase<T> implements TableDataService<Map<String, String>> {
 
 	private static final Logger log = LoggerFactory.getLogger(DataServiceBase.class);
 

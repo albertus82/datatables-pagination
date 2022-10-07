@@ -3,7 +3,6 @@ package com.davioooh.datatablespagination.data;
 import com.davioooh.datatablespagination.model.PaginationCriteria;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * This interface defines API to fetch data to be paginated. Classes
@@ -12,7 +11,7 @@ import java.util.Map;
  *
  * @author David Castelletti
  */
-public interface TableDataService {
+public interface TableDataService<T> {
 
 	/**
 	 * Used to get the total count of the entries (before filtering).
@@ -40,6 +39,6 @@ public interface TableDataService {
 	 * @return filter and ordered entities.
 	 * @throws TableDataException
 	 */
-    List<Map<String, String>> getPageEntries(PaginationCriteria<?, ?> paginationCriteria) throws TableDataException;
+    List<T> getPageEntries(PaginationCriteria<?, ?> paginationCriteria) throws TableDataException;
 
 }

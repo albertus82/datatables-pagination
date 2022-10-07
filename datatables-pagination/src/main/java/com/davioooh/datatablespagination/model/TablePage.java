@@ -42,7 +42,7 @@ public class TablePage<T> {
      * you can inform the user of this error by passing back the error message to be
      * displayed using this parameter. Do not include if there is no error.
      */
-    @JsonInclude(Include.NON_EMPTY)
+    @JsonInclude(Include.NON_EMPTY) // Do not include if there is no error!
     private String error;
 
 	public long getDraw() {

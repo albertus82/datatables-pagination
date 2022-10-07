@@ -14,9 +14,9 @@ public class SimplePaginator implements TablePaginator<Map<String, String>> {
 
 	private static final Logger log = LoggerFactory.getLogger(SimplePaginator.class);
 
-    private TableDataService dataService;
+    private TableDataService<Map<String, String>> dataService;
 
-    public SimplePaginator(TableDataService dataService) {
+    public SimplePaginator(TableDataService<Map<String, String>> dataService) {
         this.dataService = dataService;
     }
 
