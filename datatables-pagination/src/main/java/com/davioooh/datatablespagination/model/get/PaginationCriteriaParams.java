@@ -34,11 +34,11 @@ public class PaginationCriteriaParams implements PaginationCriteria {
 	 */
 	private long length;
 
-	private SearchCriteria search;
+	private SearchCriteriaParams search;
 
-	private List<OrderingCriteria> order;
+	private List<OrderingCriteriaParams> order;
 
-	private List<Column> columns;
+	private List<ColumnParams> columns;
 
 	@Override
 	public long getDraw() {
@@ -68,27 +68,27 @@ public class PaginationCriteriaParams implements PaginationCriteria {
 	}
 
 	@Override
-	public SearchCriteria getSearch() {
+	public SearchCriteriaParams getSearch() {
 		return search;
 	}
 
-	public void setSearch(SearchCriteria search) {
+	public void setSearch(SearchCriteriaParams search) {
 		this.search = search;
 	}
 
-	public List<OrderingCriteria> getOrder() {
+	public List<OrderingCriteriaParams> getOrder() {
 		return order;
 	}
 
-	public void setOrder(List<OrderingCriteria> order) {
+	public void setOrder(List<OrderingCriteriaParams> order) {
 		this.order = order;
 	}
 
-	public List<Column> getColumns() {
+	public List<ColumnParams> getColumns() {
 		return columns;
 	}
 
-	public void setColumns(List<Column> columns) {
+	public void setColumns(List<ColumnParams> columns) {
 		this.columns = columns;
 	}
 

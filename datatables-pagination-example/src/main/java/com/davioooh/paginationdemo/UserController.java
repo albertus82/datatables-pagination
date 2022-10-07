@@ -2,9 +2,9 @@ package com.davioooh.paginationdemo;
 
 import com.davioooh.datatablespagination.SimplePaginator;
 import com.davioooh.datatablespagination.TablePaginator;
-import com.davioooh.datatablespagination.model.PaginationCriteriaBody;
 import com.davioooh.datatablespagination.model.TablePage;
 import com.davioooh.datatablespagination.model.get.PaginationCriteriaParams;
+import com.davioooh.datatablespagination.model.post.PaginationCriteriaBody;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 

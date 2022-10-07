@@ -1,22 +1,17 @@
 package com.davioooh.datatablespagination.model;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
-public class SearchCriteria implements ISearchCriteria {
+public interface SearchCriteria {
 
     /**
      * Search value. To be applied to all columns which have searchable as
      * true.
      */
-    private String value;
+	String getValue();
 
     /**
      * true if the filter should be treated as a regular expression for
      * advanced searching, false otherwise.
      */
-    private boolean regex; // not used
+	boolean isRegex(); // not used
 
 }

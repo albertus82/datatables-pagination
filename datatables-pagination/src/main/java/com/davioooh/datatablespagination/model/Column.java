@@ -1,35 +1,30 @@
 package com.davioooh.datatablespagination.model;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
-public class Column implements IColumn {
+public interface Column {
 
     /**
      * Column's data source.
      */
-    private String data;
+    String getData();
 
     /**
      * Column's name.
      */
-    private String name;
+    String getName();
 
     /**
      * Flag to indicate if this column is searchable (true) or not (false).
      */
-    private boolean searchable;
+    boolean isSearchable();
 
     /**
      * Flag to indicate if this column is orderable (true) or not (false).
      */
-    private boolean orderable;
+    boolean isOrderable();
 
     /**
      * Search criteria to apply to this specific column.
      */
-    private SearchCriteria search;
+    SearchCriteria getSearch();
 
 }

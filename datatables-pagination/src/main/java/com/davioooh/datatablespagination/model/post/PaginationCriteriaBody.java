@@ -1,9 +1,11 @@
-package com.davioooh.datatablespagination.model;
+package com.davioooh.datatablespagination.model.post;
 
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
+
+import com.davioooh.datatablespagination.model.PaginationCriteria;
 
 /**
  * The pagination criteria provided by the client to process and generate a
@@ -42,16 +44,16 @@ public class PaginationCriteriaBody implements PaginationCriteria {
     /**
      * Global search criteria.
      */
-    private SearchCriteria search;
+    private SearchCriteriaBody search;
 
     /**
      * Column's ordering criteria.
      */
-    private List<OrderingCriteria> order;
+    private List<OrderingCriteriaBody> order;
 
     /**
      * Table column's list.
      */
-    private List<Column> columns;
+    private List<ColumnBody> columns;
 
 }

@@ -2,9 +2,9 @@ package com.davioooh.datatablespagination.model.get;
 
 import java.util.LinkedHashMap;
 
-import com.davioooh.datatablespagination.model.ISearchCriteria;
+import com.davioooh.datatablespagination.model.SearchCriteria;
 
-public class SearchCriteria extends LinkedHashMap<String, String> implements ISearchCriteria {
+public class SearchCriteriaParams extends LinkedHashMap<String, String> implements SearchCriteria {
 
 	private static final long serialVersionUID = -9171844131235679867L;
 

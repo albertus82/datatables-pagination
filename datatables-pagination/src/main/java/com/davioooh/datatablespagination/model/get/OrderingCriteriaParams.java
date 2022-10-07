@@ -2,9 +2,9 @@ package com.davioooh.datatablespagination.model.get;
 
 import java.util.LinkedHashMap;
 
-import com.davioooh.datatablespagination.model.IOrderingCriteria;
+import com.davioooh.datatablespagination.model.OrderingCriteria;
 
-public class OrderingCriteria extends LinkedHashMap<String, String> implements IOrderingCriteria {
+public class OrderingCriteriaParams extends LinkedHashMap<String, String> implements OrderingCriteria {
 
 	private static final long serialVersionUID = -4379969579085902855L;
 

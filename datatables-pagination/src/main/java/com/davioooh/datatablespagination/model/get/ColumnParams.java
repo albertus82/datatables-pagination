@@ -2,14 +2,14 @@ package com.davioooh.datatablespagination.model.get;
 
 import java.util.LinkedHashMap;
 
-import com.davioooh.datatablespagination.model.IColumn;
+import com.davioooh.datatablespagination.model.Column;
 
-public class Column extends LinkedHashMap<String, Object> implements IColumn {
+public class ColumnParams extends LinkedHashMap<String, Object> implements Column {
 
 	private static final long serialVersionUID = -7401089762743284813L;
 
-	public Column() {
-		put("search", new SearchCriteria());
+	public ColumnParams() {
+		put("search", new SearchCriteriaParams());
 	}
 
 	/** Column's data source, as defined by columns.data. */
@@ -45,8 +45,8 @@ public class Column extends LinkedHashMap<String, Object> implements IColumn {
 	}
 
 	@Override
-	public SearchCriteria getSearch() {
-		return (SearchCriteria) get("search");
+	public SearchCriteriaParams getSearch() {
+		return (SearchCriteriaParams) get("search");
 	}
 
 }

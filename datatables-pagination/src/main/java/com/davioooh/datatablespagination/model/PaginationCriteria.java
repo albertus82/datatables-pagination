@@ -38,17 +38,17 @@ public interface PaginationCriteria {
     /**
      * Global search criteria.
      */
-     ISearchCriteria getSearch();
+     SearchCriteria getSearch();
 
     /**
      * Column's ordering criteria.
      */
-    List<? extends IOrderingCriteria> getOrder();
+    List<? extends OrderingCriteria> getOrder();
 
     /**
      * Table column's list.
      */
-    List<? extends IColumn> getColumns();
+    List<? extends Column> getColumns();
 
 
 }
