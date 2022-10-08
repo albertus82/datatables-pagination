@@ -18,12 +18,8 @@
                 { "data": "age" }
             ],
             "ajax": {
-                "url": "/users/data-json",
-                "type": "POST",
-                "contentType" : "application/json; charset=utf-8",			    
-                "data": function ( d ) {
-                    return JSON.stringify(d); // NOTE: you also need to stringify POST payload
-                }
+                "url": "data-urlencoded",
+                "type": "POST"
             }
         });
     });
