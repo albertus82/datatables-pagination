@@ -12,32 +12,26 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.davioooh.datatablespagination.SimplePaginator;
 import com.davioooh.datatablespagination.TablePaginator;
 import com.davioooh.datatablespagination.model.TablePage;
-import com.davioooh.datatablespagination.model.get.PaginationCriteriaParams;
-import com.davioooh.datatablespagination.model.post.PaginationCriteriaBody;
+import com.davioooh.datatablespagination.model.urlencoded.PaginationCriteriaParams;
 
 @Controller
-@RequestMapping
+@RequestMapping("/users")
 public class UserController {
 
 	private TablePaginator<Map<String, String>> paginator = new SimplePaginator(new UserTableRepository());
 
-	@GetMapping("/users/get")
-	public String getUsersGet() {
-		return "list-get";
-	}
-
-	@GetMapping("/users/post")
-	public String getUsersPost() {
-		return "list-post";
-	}
-
-	@GetMapping("/users/data")
-	public @ResponseBody TablePage<Map<String, String>> getUsersData(PaginationCriteriaParams treq) {
+	@GetMapping("/data-urlencoded")
+	public @ResponseBody TablePage<Map<String, String>> getUsersDataUrlEncoded(PaginationCriteriaParams treq) {
 		return paginator.getPage(treq);
 	}
 
-	@PostMapping("/users/data")
-	public @ResponseBody TablePage<Map<String, String>> postUsersData(@RequestBody PaginationCriteriaBody treq) {
+	@PostMapping("/data-urlencoded")
+	public @ResponseBody TablePage<Map<String, String>> postUsersDataUrlEncoded(PaginationCriteriaParams treq) {
+		return paginator.getPage(treq);
+	}
+
+	@PostMapping("/data-json")
+	public @ResponseBody TablePage<Map<String, String>> postUsersDataJson(@RequestBody PaginationCriteriaParams treq) {
 		return paginator.getPage(treq);
 	}
 

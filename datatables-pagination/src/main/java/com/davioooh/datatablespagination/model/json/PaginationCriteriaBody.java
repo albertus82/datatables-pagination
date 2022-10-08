@@ -1,4 +1,4 @@
-package com.davioooh.datatablespagination.model.post;
+package com.davioooh.datatablespagination.model.json;
 
 import java.util.List;
 

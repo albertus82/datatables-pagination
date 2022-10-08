@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
 <script
@@ -18,7 +18,12 @@
                 { "data": "age" }
             ],
             "ajax": {
-                "url": "/users/data"
+                "url": "/users/data-json",
+                "type": "POST",
+                "contentType" : "application/json; charset=utf-8",			    
+                "data": function ( d ) {
+                    return JSON.stringify(d); // NOTE: you also need to stringify POST payload
+                }
             }
         });
     });

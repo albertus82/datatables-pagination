@@ -1,4 +1,4 @@
-package com.davioooh.datatablespagination.model.get;
+package com.davioooh.datatablespagination.model.urlencoded;
 
 import java.util.LinkedHashMap;
 
