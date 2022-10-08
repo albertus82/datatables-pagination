@@ -3,7 +3,7 @@ package com.davioooh.datatablespagination.model;
 public interface SearchCriteria {
 
 	/**
-	 * Search value. To be applied to all columns which have searchable as true.
+	 * Search value.
 	 */
 	String getValue();
 

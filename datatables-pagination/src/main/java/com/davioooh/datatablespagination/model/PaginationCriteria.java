@@ -34,7 +34,8 @@ public interface PaginationCriteria {
 	long getLength();
 
 	/**
-	 * Global search criteria.
+	 * Global search criteria. To be applied to all columns which have searchable as
+	 * true.
 	 */
 	SearchCriteria getSearch();
 
