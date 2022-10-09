@@ -17,17 +17,17 @@ class DataServiceBaseTest {
 
 	private DataServiceBase<User> dataService = new DataServiceBase<User>() {
 		@Override
-		public long countTotalEntries() throws TableDataException {
+		public long countTotalEntries() {
 			return 0;
 		}
 
 		@Override
-		public long countFilteredEntries(PaginationCriteria paginationCriteria) throws TableDataException {
+		public long countFilteredEntries(PaginationCriteria paginationCriteria) {
 			return 0;
 		}
 
 		@Override
-		protected List<User> getData(PaginationCriteria paginationCriteria) throws TableDataException {
+		protected List<User> getData(PaginationCriteria paginationCriteria) {
 			return TEST_DATA;
 		}
 	};

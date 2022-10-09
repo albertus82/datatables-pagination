@@ -17,7 +17,7 @@ public interface TableDataService<T> {
 	 * Used to get the total count of the entries (before filtering).
 	 *
 	 * @return the total count of the entries.
-	 * @throws TableDataException
+	 * @throws TableDataException in case of error.
 	 */
 	long countTotalEntries() throws TableDataException;
 
@@ -27,7 +27,7 @@ public interface TableDataService<T> {
 	 *
 	 * @param paginationCriteria pagination criteria.
 	 * @return the count of filter entries.
-	 * @throws TableDataException
+	 * @throws TableDataException in case of error.
 	 */
 	long countFilteredEntries(PaginationCriteria paginationCriteria) throws TableDataException;
 
@@ -37,7 +37,7 @@ public interface TableDataService<T> {
 	 *
 	 * @param paginationCriteria pagination criteria.
 	 * @return filter and ordered entities.
-	 * @throws TableDataException
+	 * @throws TableDataException in case of error.
 	 */
 	List<T> getPageEntries(PaginationCriteria paginationCriteria) throws TableDataException;
 
