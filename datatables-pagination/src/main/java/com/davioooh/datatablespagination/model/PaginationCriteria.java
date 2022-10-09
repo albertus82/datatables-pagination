@@ -11,53 +11,53 @@ import java.util.List;
 public interface PaginationCriteria {
 
 	/**
-	 * Draw counter. This is used by DataTables to ensure that the Ajax returns from
-	 * server-side processing requests are drawn in sequence by DataTables (Ajax
-	 * requests are asynchronous and thus can return out of sequence). This is used
-	 * as part of the draw return parameter.
+	 * Returns the draw counter. This is used by DataTables to ensure that the Ajax
+	 * returns from server-side processing requests are drawn in sequence by
+	 * DataTables (Ajax requests are asynchronous and thus can return out of
+	 * sequence). This is used as part of the draw return parameter.
 	 * 
-	 * @return
+	 * @return the draw counter.
 	 */
 	long getDraw();
 
 	/**
-	 * Paging first record indicator. This is the start point in the current data
-	 * set (0 index based - i.e. 0 is the first record).
+	 * Returns the paging first record indicator. This is the start point in the
+	 * current data set (0 index based - i.e. 0 is the first record).
 	 * 
-	 * @return
+	 * @return the start point in the current data set.
 	 */
 	long getStart();
 
 	/**
-	 * Number of records that the table can display in the current draw. It is
-	 * expected that the number of records returned will be equal to this number,
-	 * unless the server has fewer records to return. Note that this can be -1 to
-	 * indicate that all records should be returned (although that negates any
-	 * benefits of server-side processing!)
+	 * Returns the number of records that the table can display in the current draw.
+	 * It is expected that the number of records returned will be equal to this
+	 * number, unless the server has fewer records to return. Note that this can be
+	 * -1 to indicate that all records should be returned (although that negates any
+	 * benefits of server-side processing!).
 	 * 
-	 * @return
+	 * @return the number of records that the table can display in the current draw.
 	 */
 	long getLength();
 
 	/**
-	 * Global search criteria. To be applied to all columns which have searchable as
-	 * true.
+	 * Returns the global search criteria. To be applied to all columns which have
+	 * searchable as true.
 	 * 
-	 * @return
+	 * @return the global search criteria.
 	 */
 	SearchCriteria getSearch();
 
 	/**
-	 * Column's ordering criteria.
+	 * Returns the columns ordering criteria.
 	 * 
-	 * @return
+	 * @return the columns ordering criteria.
 	 */
 	List<? extends OrderingCriteria> getOrder();
 
 	/**
-	 * Table column's list.
+	 * Returns the table columns list.
 	 * 
-	 * @return
+	 * @return the table columns list.
 	 */
 	List<? extends Column> getColumns();
 
