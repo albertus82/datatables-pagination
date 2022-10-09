@@ -15,12 +15,16 @@ public interface PaginationCriteria {
 	 * server-side processing requests are drawn in sequence by DataTables (Ajax
 	 * requests are asynchronous and thus can return out of sequence). This is used
 	 * as part of the draw return parameter.
+	 * 
+	 * @return
 	 */
 	long getDraw();
 
 	/**
 	 * Paging first record indicator. This is the start point in the current data
 	 * set (0 index based - i.e. 0 is the first record).
+	 * 
+	 * @return
 	 */
 	long getStart();
 
@@ -30,22 +34,30 @@ public interface PaginationCriteria {
 	 * unless the server has fewer records to return. Note that this can be -1 to
 	 * indicate that all records should be returned (although that negates any
 	 * benefits of server-side processing!)
+	 * 
+	 * @return
 	 */
 	long getLength();
 
 	/**
 	 * Global search criteria. To be applied to all columns which have searchable as
 	 * true.
+	 * 
+	 * @return
 	 */
 	SearchCriteria getSearch();
 
 	/**
 	 * Column's ordering criteria.
+	 * 
+	 * @return
 	 */
 	List<? extends OrderingCriteria> getOrder();
 
 	/**
 	 * Table column's list.
+	 * 
+	 * @return
 	 */
 	List<? extends Column> getColumns();
 
