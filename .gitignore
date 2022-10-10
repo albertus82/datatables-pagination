@@ -1,13 +1,18 @@
 target/
 !.mvn/wrapper/maven-wrapper.jar
 MANIFEST.MF
+*.versionsBackup
+.DS_Store
+.flattened-pom.xml
+hs_err_pid*.log
+junit*.properties
 
 ### STS ###
 .apt_generated
 .classpath
 .factorypath
 .project
-.settings
+.settings/
 .springBeans
 
 ### IntelliJ IDEA ###
